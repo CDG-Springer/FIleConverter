@@ -1,0 +1,237 @@
+:root{
+    --blue: #00D4FF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed';
+}
+
+body{
+    background: #001220;
+    background-image: url('bg2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background: #030C13; */
+    height: 9vh;
+    /* height: 100vh; */
+    padding: 1vh;
+}
+
+a{
+    text-decoration: none;
+    transition: 0.3s;
+    color: var(--blue);
+    font-family: 'Signika Negative';
+    font-weight: 600;
+    /* letter-spacing: 5px; */
+}
+
+
+a:hover{
+    cursor: pointer;
+}
+
+.logo{
+    /* letter-spacing: 4px; */
+}
+
+.logo img{
+    width: 3vw;
+    min-width: 35px;
+    font-size: 60px;
+    /* filter: grayscale(100%); */
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu{
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    margin: 8px;
+    background: var(--blue);
+}
+
+.nav-list.active{
+    transform: translateX(0);
+}
+
+.test{
+    width: 95vw;
+    height: 2px;
+    border-radius: 100px;
+    background-color: #0D273C
+}
+
+.title{
+    font-size: 2rem;
+    font-weight: 1000;
+    margin-top: 15vh;
+    color: #00d4ff;
+    text-shadow: 0px 0px 19px rgba(0,0,0,1), 0px 0px 10px rgba(0,0,0,1);
+}
+
+.title-text{
+    margin-bottom: 1em;
+    color: #527278;
+    text-shadow: 0px 0px 19px rgba(0,0,0,1), 0px 0px 10px rgba(0,0,0,1);
+}
+
+.blob{
+    overflow: hidden;
+    width: 23vw;
+    min-width: 250px;
+    height: 40vh;
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+    background: #112739;
+    opacity: 0.5;
+    animation: morph 3.75s linear infinite;
+    z-index: -1;
+    position: absolute;
+    justify-content: center;
+    left: 50%;
+    top: 27%;
+    transform: translate(-50%, -27%);
+}
+
+.clear{
+    clear: both;
+}
+
+@keyframes morph{
+    0%, 100%{
+        border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;;
+    }
+    33%{
+        border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
+    }
+    66%{
+        border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
+    }
+}
+
+.redbox{
+    width: 35vw;
+    height: 10vh;
+    min-width: 350px;
+    min-height: 75px;
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+    background: rgb(6,41,161);
+    background: linear-gradient(70deg, rgba(6,41,161,1) 0%, var(--blue) 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    justify-content: space-around;
+    display: flex;
+    border-radius: 4px;
+    box-shadow: 10px 10px 60px 0px #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.redbox:hover{
+    background: rgb(22,64,208);
+    background: linear-gradient(70deg, rgba(22,64,208,1) 0%, rgba(83,224,252,1) 100%);
+    transition: all 0.3s ease-in-out;
+    -webkit-box-shadow: 5px 5px 24px 0px #000000; 
+    box-shadow: 5px 5px 24px 0px #000000;
+}
+
+.converter div:before{
+    overflow: hidden;
+    content: '';
+    position: absolute;
+    height: 700px;
+    width: 20px;
+    background: #f3f3f3;
+    box-shadow: 10px 10px 10px 20px #fff;
+    filter: blur(1px);
+    opacity: 0.3;
+    transition: 0.4s;
+    transform: rotate(-20deg) translateX(-350px);
+}
+
+.converter div:hover:before{
+    transform: rotate(-20deg) translateX(350px);
+}
+
+.redbox iconify-icon, i{
+    color: #fefefe;
+    padding: 10px;
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.redbox i:hover, iconify-icon:hover{
+    color: white;
+    text-shadow: 0px 0px 5px #fff;
+    opacity: 1;
+}
+
+#container-converter{
+    border-radius: 5px;
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    min-width: 400px;
+    height: 15vh;
+}
+
+@media (max-width: 999px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    
+
+    .nav-list{
+        position: absolute;
+        top: 9.5vh;
+        right: 0;
+        width: 100vw;
+        height: 90.5vh;
+        background: #001220;
+        z-index: 100;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-list li{
+        margin-left: 0;
+        /* opacity: 0; */
+    }
+
+    .mobile-menu{
+        display: block;
+    }
+}
